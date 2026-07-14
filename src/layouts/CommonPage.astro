@@ -10,16 +10,17 @@ interface Props {
   headings?: MarkdownHeading[]
   view?: boolean
   comment?: boolean
+  ['data-i18n-title']?: string
 }
 
-const { title, headings, view, comment: enableComment, ...props } = Astro.props
+const { title, headings, view, comment: enableComment, ['data-i18n-title']: i18nTitle, ...props } = Astro.props
 ---
 
 <PageLayout meta={{ title }} {...props}>
   {headings?.length && <TOC headings={headings} slot='sidebar' />}
 
   <Fragment slot='header'>
-    <h1 class='text-2xl font-medium sm:mb-2 sm:text-3xl'>{title}</h1>
+    <h1 class='text-2xl font-medium sm:mb-2 sm:text-3xl' data-i18n={i18nTitle}>{title}</h1>
     {(view || enableComment) && <PageInfo {view} comment={enableComment} class='italic' />}
   </Fragment>
 

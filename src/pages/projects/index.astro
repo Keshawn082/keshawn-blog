@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets'
 
-import { Button, Collapse, Icon } from 'astro-pure/user'
+import { Collapse, Icon } from 'astro-pure/user'
+import Button from '@/components/Button.astro'
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
 import Sponsors from '@/components/projects/Sponsors.astro'
@@ -19,7 +20,7 @@ const headings = [
 ]
 ---
 
-<PageLayout title='Projects' {headings} view>
+<PageLayout title='项目' data-i18n-title='projects.title' {headings} view>
   {/* About astro-pure */}
   <div class='not-prose flex justify-center'>
     <a
@@ -27,10 +28,12 @@ const headings = [
       class='flex items-center gap-x-3 rounded-full border bg-background px-4 py-2 text-sm shadow-sm transition-shadow hover:shadow-md'
     >
       <span class='size-2 rounded-full bg-green-400'></span>
-      <p class='font-medium text-muted-foreground'>About Astro-Theme-Pure Project</p>
+      <p class='font-medium text-muted-foreground' data-i18n='projects.about_theme'>
+        About Astro-Theme-Pure 项目
+      </p>
     </a>
   </div>
-  <p>Github Activities:</p>
+  <p data-i18n='projects.github_activities'>GitHub 动态：</p>
   <p>
     <Image
       src='https://ghchart.rshah.org/659eb9/cworld1'
@@ -39,15 +42,15 @@ const headings = [
       loading='lazy'
     />
   </p>
-  <p>
-    If you think it would be useful or interesting to collaborate on a project, you can donate to
-    support my work or contact me to discuss a project.
+  <p data-i18n='projects.collaborate'>
+    如果你觉得可以合作或者有兴趣参与项目，可以通过捐赠支持我的工作或联系我讨论项目。
   </p>
-  <Button title='Checkout sponsorship' class='w-fit' href='#sponsorship'>
+  <Button class='w-fit' href='#sponsorship'>
     <Icon class='size-5' name='receive-money' slot='before' />
+    <span data-i18n='projects.checkout_sponsorship'>查看赞助</span>
   </Button>
 
-  <h2 id='programs'>Programs</h2>
+  <h2 id='programs' data-i18n='projects.programs'>项目</h2>
   <ProjectSection
     projects={[
       {
@@ -71,7 +74,8 @@ const headings = [
       }
     ]}
   />
-  <Collapse title='Some old projects'>
+  <Collapse title='一些老项目'>
+    <span slot='title' data-i18n='projects.old_projects' hidden>一些老项目</span>
     <ProjectSection
       projects={[
         {
@@ -95,7 +99,7 @@ const headings = [
     />
   </Collapse>
 
-  <h2 id='learnings'>Learnings</h2>
+  <h2 id='learnings' data-i18n='projects.learnings'>学习</h2>
   <ProjectSection
     class='my-2'
     projects={[
@@ -120,7 +124,7 @@ const headings = [
     ]}
   />
 
-  <h2 id='others'>Others</h2>
+  <h2 id='others' data-i18n='projects.others'>其他</h2>
   <ProjectSection
     projects={[
       {
@@ -136,31 +140,39 @@ const headings = [
     ]}
   />
 
-  <h2 id='gpg-signature'>GPG Signature</h2>
+  <h2 id='gpg-signature' data-i18n='projects.gpg'>GPG 签名</h2>
   <p>
-    You can verify the authenticity of the files I signed by checking the GPG signature. My GPG key
-    is <code>114514</code>, and you can find it on the opengpg key servers or download from it.
+    <span data-i18n='projects.gpg_desc'>你可以通过验证 GPG 签名来确认我签署的文件的真实性。我的 GPG 密钥是</span>
+    <code>114514</code>
   </p>
-  <Button href='https://keys.openpgp.org/search?q=114514' title='Checkout my key' target='_blank'>
+  <Button href='https://keys.openpgp.org/search?q=114514' target='_blank'>
     <KeyIcon class='size-5' slot='before' />
+    <span data-i18n='projects.checkout_key'>查看我的密钥</span>
   </Button>
 
-  <h2 id='sponsorship'>Sponsorship</h2>
-  <p>Chinese methods: <a href="https://afdian.com/a/cworld" target="_blank">Afadian</a>, Wechat or Alipay </p>
+  <h2 id='sponsorship' data-i18n='projects.sponsorship'>赞助</h2>
+  <p>
+    <span data-i18n='projects.sponsorship.cn'>国内方式：</span>
+    <a href="https://afdian.com/a/cworld" target="_blank">Afadian</a>, Wechat or Alipay
+  </p>
   <Sponsorship
     methods={[
       { name: 'WeChat', icon: 'wechat-pay', image: wechat },
       { name: 'Alipay', icon: 'alipay', image: alipay }
     ]}
   />
-  <p>Global methods: <a href="https://ko-fi.com/cworld0" target="_blank">Ko-fi</a> </p>
-  <p>Please leave a message or contact me proactively after sponsorship. My email is:
+  <p>
+    <span data-i18n='projects.sponsorship.global'>国际方式：</span>
+    <a href="https://ko-fi.com/cworld0" target="_blank">Ko-fi</a>
+  </p>
+  <p>
+    <span data-i18n='projects.sponsorship.contact'>赞助后请留言或主动联系我。我的邮箱是</span>
     <code style='cursor: pointer'
       onclick='const m=atob(this.textContent);alert(m);window.open(`mailto:${m}`,"_blank")'
     >Y3dvcmxkMEBxcS5jb20=</code>
-    (click code to transform base64).
+    <span data-i18n='projects.email_hint'>（点击代码解码 Base64）</span>
   </p>
-  <p>Thanks to the following sponsors:</p>
+  <p data-i18n='projects.sponsorship.thanks'>感谢以下赞助者：</p>
   <Sponsors
     progressMax={50}
     sponsors={[
@@ -176,7 +188,7 @@ const headings = [
       { name: 'Luis Xu', platform: 'Alipay', amount: 30, date: '2025-08-03' },
       { name: '顾**', platform: 'Wechat', amount: 28, date: '2025-06-23' },
       { name: 'Hans J.Han', platform: 'Wechat', amount: 10, date: '2025-04-04' },
-      { name: '**青', platform: 'Alipay', amount: 12, date: '2024-05-21' },
+      { name: '**青', platform: 'Alipay', amount: 12, date: '2025-05-21' },
       { name: 'Anonymous', platform: 'Wechat', amount: 20, date: '2022-04-06' },
       { name: '华雄', platform: 'QQ', amount: 5, date: '2019-12-30' },
       { name: '◌', platform: 'QQ', amount: 3, date: '2019-12-30' },

@@ -1,7 +1,8 @@
 ---
-import { Footer, Header, ThemeProvider } from 'astro-pure/components/basic'
+import { Footer, ThemeProvider } from 'astro-pure/components/basic'
 import type { SiteMeta } from 'astro-pure/types'
 import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
 import config from '@/site-config'
 
 // Import the global.css file here so that it is included on
@@ -25,6 +26,15 @@ const {
   <head>
     <BaseHead {articleDate} {description} {ogImage} {title} />
     <ThemeProvider />
+    {/* 预加载语言偏好，防止闪烁 */}
+    <script is:inline>
+      (function() {
+        var lang = localStorage.getItem('keshawn-lang');
+        if (lang === 'en') {
+          document.documentElement.lang = 'en';
+        }
+      })();
+    </script>
   </head>
 
   <body class='flex justify-center bg-background text-foreground' {...props}>
@@ -89,3 +99,8 @@ const {
     </style>
   </body>
 </html>
+
+<script>
+  import { initI18n } from '@/i18n/client'
+  initI18n()
+</script>
