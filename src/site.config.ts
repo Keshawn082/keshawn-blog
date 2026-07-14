@@ -4,7 +4,7 @@ export const theme: ThemeUserConfig = {
   title: 'Keshawn',
   author: 'Keshawn',
   description: '中南大学 · 智能科学与技术 · 大模型应用开发',
-  favicon: '/favicon.ico',
+  favicon: '/favicon/favicon.ico',
   socialCard: '/images/social-card.png',
 
   locale: {
@@ -66,7 +66,7 @@ export const integ: IntegrationUserConfig = {
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
       { name: 'Link', val: 'https://keshawn.cn' },
-      { name: 'Avatar', val: 'https://keshawn.cn/favicon.ico' }
+      { name: 'Avatar', val: 'https://keshawn.cn/favicon/favicon.ico' }
     ],
     cacheAvatar: false
   },
