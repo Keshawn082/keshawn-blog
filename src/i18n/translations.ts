@@ -22,7 +22,7 @@ export const zh: Record<string, string> = {
   'home.about': '关于',
   'home.posts': '文章',
   'home.education': '教育',
-  'home.internships': '实习经历',
+  'home.internships': '实习',
   'home.websites': '网站列表',
   'home.certifications': '证书',
   'home.skills': '技能',

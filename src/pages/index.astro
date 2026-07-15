@@ -78,23 +78,6 @@ if (!images[imagePath])
           <span data-i18n='home.more_about'>了解更多</span>
         </Button>
       </Section>
-      {
-        allPostsByDate.length > 0 && (
-          <Section title='文章' data-i18n-section='home.posts'>
-            <ul class='flex flex-col gap-y-1.5 sm:gap-y-2'>
-              {allPostsByDate.map((p) => (
-                <li class='flex flex-col gap-x-2 sm:flex-row'>
-                  <PostPreview post={p} />
-                </li>
-              ))}
-            </ul>
-            <Button class='w-fit self-end' href='/blog' variant='ahead'>
-              <span data-i18n='home.more_posts'>更多文章</span>
-            </Button>
-          </Section>
-        )
-      }
-
       <Section title='教育' data-i18n-section='home.education'>
         <div class='not-prose flex flex-col gap-3'>
           <a
@@ -137,7 +120,7 @@ if (!images[imagePath])
         </div>
       </Section>
 
-      <Section title='实习经历' data-i18n-section='home.internships'>
+      <Section title='实习' data-i18n-section='home.internships'>
         <div class='not-prose flex flex-col gap-3'>
           <a
             href='https://marketing.k-fashionshop.com/'
@@ -197,6 +180,23 @@ if (!images[imagePath])
           </a>
         </div>
       </Section>
+
+      {
+        allPostsByDate.length > 0 && (
+          <Section title='文章' data-i18n-section='home.posts'>
+            <ul class='flex flex-col gap-y-1.5 sm:gap-y-2'>
+              {allPostsByDate.map((p) => (
+                <li class='flex flex-col gap-x-2 sm:flex-row'>
+                  <PostPreview post={p} />
+                </li>
+              ))}
+            </ul>
+            <Button class='w-fit self-end' href='/blog' variant='ahead'>
+              <span data-i18n='home.more_posts'>更多文章</span>
+            </Button>
+          </Section>
+        )
+      }
 
       <Section title='项目' data-i18n-section='home.projects'>
         <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
