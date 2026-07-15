@@ -22,6 +22,7 @@ export const zh: Record<string, string> = {
   'home.about': '关于',
   'home.posts': '文章',
   'home.education': '教育',
+  'home.internships': '实习经历',
   'home.websites': '网站列表',
   'home.certifications': '证书',
   'home.skills': '技能',
@@ -47,6 +48,23 @@ export const zh: Record<string, string> = {
   'home.edu.tag.985': '985院校',
   'home.edu.tag.211': '211院校',
   'home.edu.tag.double_first_class': '双一流院校',
+
+  // Internship section
+  'home.intern.tag.hkex': '港交所上市公司',
+  'home.intern.tag.a_share': 'A股上市公司',
+  'home.intern.tag.ai_app': 'AI应用企业',
+  'home.intern.wenge.company': '北京中科闻歌科技股份有限公司',
+  'home.intern.wenge.business': '人工智能认知与决策技术企业',
+  'home.intern.wenge.role': '算法实习生',
+  'home.intern.wenge.date': '2025年10月 - 2025年12月',
+  'home.intern.wondershare.company': '万兴科技集团股份有限公司',
+  'home.intern.wondershare.business': '主营数字创意软件、AI精品影视内容创作',
+  'home.intern.wondershare.role': 'AI应用开发实习生',
+  'home.intern.wondershare.date': '2026年1月 - 2026年4月',
+  'home.intern.chaoji.company': '潮际汇（杭州）智能科技有限公司',
+  'home.intern.chaoji.business': '人工智能技术开发与应用',
+  'home.intern.chaoji.role': 'Agent开发实习生',
+  'home.intern.chaoji.date': '2026年6月 - 2026年9月',
 
   // Project cards on homepage
   'home.project.more.heading': '更多项目',
@@ -148,6 +166,7 @@ export const en: Record<string, string> = {
   'home.about': 'About',
   'home.posts': 'Posts',
   'home.education': 'Education',
+  'home.internships': 'Internships',
   'home.websites': 'Website List',
   'home.certifications': 'Certifications',
   'home.skills': 'Skills',
@@ -173,6 +192,23 @@ export const en: Record<string, string> = {
   'home.edu.tag.985': 'Project 985',
   'home.edu.tag.211': 'Project 211',
   'home.edu.tag.double_first_class': 'Double First-Class',
+
+  // Internship section
+  'home.intern.tag.hkex': 'HKEX-listed Company',
+  'home.intern.tag.a_share': 'A-share Listed Company',
+  'home.intern.tag.ai_app': 'AI Application Company',
+  'home.intern.wenge.company': 'Wenge Group',
+  'home.intern.wenge.business': 'AI cognitive and decision intelligence technology company',
+  'home.intern.wenge.role': 'Algorithm Intern',
+  'home.intern.wenge.date': 'Oct 2025 - Dec 2025',
+  'home.intern.wondershare.company': 'Wondershare Technology Group',
+  'home.intern.wondershare.business': 'Digital creative software and AI video content creation',
+  'home.intern.wondershare.role': 'AI Application Development Intern',
+  'home.intern.wondershare.date': 'Jan 2026 - Apr 2026',
+  'home.intern.chaoji.company': 'ChaoJiHui (Hangzhou) Intelligent Technology Co., Ltd.',
+  'home.intern.chaoji.business': 'AI technology development and application',
+  'home.intern.chaoji.role': 'Agent Development Intern',
+  'home.intern.chaoji.date': 'Jun 2026 - Sep 2026',
 
   // Project cards on homepage
   'home.project.more.heading': 'More Projects',
