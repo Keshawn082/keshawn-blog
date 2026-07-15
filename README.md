@@ -1,99 +1,198 @@
-# Astro Theme Pure
+# Keshawn Blog
 
-English | [简体中文](./README-zh-CN.md)
+Keshawn 的个人技术博客与主页，站点地址：<https://keshawn.cn>。
 
-A simple, fast and powerful blog & document theme built by Astro.
+本项目基于 Astro 与 Astro Theme Pure 搭建，主要用于展示个人介绍、教育经历、实习经历、技术文章、项目与技能。当前内容方向聚焦大模型应用开发、AI Agent、RAG、多 Agent 协作与 AI 工程化实践。
 
-[![GitHub deployments](https://img.shields.io/github/deployments/cworld1/astro-theme-pure/production?style=flat&logo=vercel&label=vercel)](https://astro-pure.js.org/)
-[![NPM Version](https://img.shields.io/npm/v/astro-pure?logo=npm&style=flat)](https://www.npmjs.com/package/astro-pure)
-[![GitHub Release](https://img.shields.io/github/v/release/cworld1/astro-theme-pure?include_prereleases&style=flat&label=template)](https://github.com/cworld1/astro-theme-pure/releases)
-[![GitHub License](https://img.shields.io/github/license/cworld1/astro-theme-pure?style=flat)](https://github.com/cworld1/astro-theme-pure/blob/main/LICENSE)
+## 功能特性
 
-![image](./.github/assets/header.webp)
-![image](./.github/assets/body.webp)
+- 个人主页：头像、简介、教育经历、实习经历、证书、技能与项目入口
+- 博客系统：基于 Astro Content Collections 管理 Markdown / MDX 文章
+- 项目页：展示项目、学习记录与 GitHub 动态
+- 关于页：展示个人介绍、工具栈与博客历史
+- 中英文切换：通过客户端 i18n 字典切换页面固定文案
+- 暗色模式：支持亮色 / 暗色 / 系统主题
+- 搜索：使用 Pagefind 构建静态全文搜索
+- RSS：自动生成 `/rss.xml`
+- SEO：Canonical、Open Graph、Twitter Card、favicon、sitemap 等基础配置
+- Markdown 增强：Shiki 代码高亮、复制按钮、代码块折叠、数学公式 KaTeX、标题锚点
 
-> [!NOTE]
-> Known issues: Header & customize options is still under development (template exposed still).
+## 技术栈
 
-## Introduction
+- [Astro](https://astro.build/) 6
+- [TypeScript](https://www.typescriptlang.org/)
+- [Astro Theme Pure / astro-pure](https://github.com/cworld1/astro-theme-pure)
+- [UnoCSS](https://unocss.dev/)
+- [Pagefind](https://pagefind.app/)
+- [Shiki](https://shiki.style/)
+- [KaTeX](https://katex.org/)
+- [Vercel](https://vercel.com/) 部署适配
 
-Checkout [Demo Site →](https://astro-pure.js.org/)
+## 目录结构
 
-### :fire: Features
-
-- [x] :rocket: Fast & high performance
-- [x] :star: Simple & clean design
-- [x] :iphone: Responsive design
-- [x] :mag: Full-site search built with [pagefind](https://pagefind.app/)
-- [x] :world_map: Sitemap & RSS feed
-- [x] :spider_web: SEO-friendly
-- [x] :book: TOC (table of contents)
-- [x] :framed_picture: Dynamic open graph generation for posts
-- [x] :framed_picture: Mediumzoom lightbox for images
-
-### :package: Components
-
-Theme includes a lot of components, which can not only be used in the theme, but also in other astro projects.
-
-> For other astro projects, UnoCSS is required. See [Package README](https://github.com/cworld1/astro-theme-pure/blob/main/packages/pure/README.md#use-with-common-astro-project) for more details.
-
-- Basic components: `Aside`, `Tabs`, `Timeline`, `Steps`, `Spoiler`...
-- Advanced components: `GithubCard`, `LinkPreview`, `Quote`, `QRCode`...
-
-### :white_check_mark: Lighthouse score
-
-[![lighthouse-score](./.github/assets/lighthouse-score.png)](https://pagespeed.web.dev/analysis/https-cworld-top/o229zrt5o4?form_factor=mobile&hl=en)
-
-## Documentation
-
-[Docs](https://astro-pure.js.org/docs) | [Showcase](https://github.com/cworld1/astro-theme-pure/issues/10)
-
-## Package
-
-See [astro-theme-pure](https://www.npmjs.com/package/astro-pure) on npm.
-
-## Local development
-
-Environment requirements:
-
-- [Nodejs](https://nodejs.org/): 18.0.0+
-
-Clone the repository:
-
-```shell
-git clone https://github.com/cworld1/astro-theme-pure.git
-cd astro-theme-pure
+```text
+.
+├── src/
+│   ├── assets/              # 头像、favicon、工具/学校/公司图标、项目图片等
+│   ├── components/          # 页面组件与自定义组件
+│   ├── content/             # Astro 内容集合
+│   │   ├── blog/            # 博客文章
+│   │   └── docs/            # 文档集合占位/未来文档
+│   ├── i18n/                # 中英文翻译字典与客户端切换逻辑
+│   ├── layouts/             # 页面布局
+│   ├── pages/               # Astro 路由页面
+│   ├── plugins/             # Markdown / Shiki / rehype 插件
+│   └── site.config.ts       # 站点与主题配置
+├── public/                  # 静态资源、favicon、RSS XSL 等
+├── packages/pure/           # astro-pure 主题源码/组件包副本
+├── astro.config.ts          # Astro 配置
+├── uno.config.ts            # UnoCSS 配置
+└── package.json
 ```
 
-Useful commands:
+## 本地开发
 
-```shell
-# Install dependencies
-bun install
-# Start the dev server
-bun dev
-# Build the project
-bun run build
-# Preview (after the build)
-bun preview
-# Create a new post
-bun pure new
+环境要求：
+
+- Node.js 18+
+- npm
+
+安装依赖：
+
+```bash
+npm install
 ```
 
-## Contributions
+启动开发服务器：
 
-To spend more time coding and less time fiddling with whitespace, this project uses code conventions and styles to encourage consistency. Code with a consistent style is easier (and less error-prone!) to review, maintain, and understand.
+```bash
+npm run dev
+```
 
-## Thanks
+类型检查：
 
-- [Astro Cactus](https://github.com/chrismwilliams/astro-theme-cactus)
-- [Astro Resume](https://github.com/srleom/astro-theme-resume)
-- [Starlight](https://github.com/withastro/starlight)
+```bash
+npm run check
+```
 
-Other third party references are on [Docs#Contributions](https://astro-pure.js.org/docs/advanced/about). Appreciate for all open source libraries.
+生产构建：
+
+```bash
+npm run build
+```
+
+预览构建产物：
+
+```bash
+npm run preview
+```
+
+## 常用维护入口
+
+### 修改站点基础信息
+
+编辑：
+
+```text
+src/site.config.ts
+```
+
+这里包含站点标题、作者、描述、导航菜单、footer、RSS、Pagefind、Waline、MediumZoom 等配置。
+
+### 修改首页内容
+
+编辑：
+
+```text
+src/pages/index.astro
+```
+
+首页包含：关于、教育、实习、文章、项目、证书、技能等模块。
+
+### 修改中英文固定文案
+
+编辑：
+
+```text
+src/i18n/translations.ts
+```
+
+页面中通过 `data-i18n` 绑定翻译 key。
+
+### 新增博客文章
+
+在目录中新增 Markdown 或 MDX 文件：
+
+```text
+src/content/blog/
+```
+
+文章 frontmatter 示例：
+
+```md
+---
+title: '文章标题'
+description: '文章描述，建议不超过 160 字'
+publishDate: 2026-07-15
+tags: ['AI Agent', 'RAG']
+draft: false
+comment: true
+---
+
+正文内容。
+```
+
+内容集合 schema 定义在：
+
+```text
+src/content.config.ts
+```
+
+### 修改图标与图片资源
+
+常用资源目录：
+
+```text
+src/assets/tools/       # 工具图标
+src/assets/schools/     # 学校图标
+src/assets/companies/   # 公司图标
+src/assets/projects/    # 项目卡片图片
+public/favicon/         # 浏览器 favicon 与 PWA 图标
+```
+
+## 部署
+
+项目为静态站点输出：
+
+```text
+output: 'static'
+```
+
+构建产物输出到：
+
+```text
+dist/
+```
+
+可部署到 Vercel 或其他静态站点托管平台。
+
+## 当前内容状态
+
+- 首页已个人化为 Keshawn 的个人主页
+- 博客已有 Hermes Agent 深度解析文章
+- 关于页展示 AI Agent / 开发 / 运维相关工具栈
+- 项目页仍保留部分主题模板项目内容，后续可继续替换为个人真实项目
+- Waline 评论组件代码保留，但当前配置为关闭
+
+## Credits
+
+本项目基于以下开源项目构建：
+
+- [Astro](https://astro.build/)
+- [Astro Theme Pure](https://github.com/cworld1/astro-theme-pure)
+- [Pagefind](https://pagefind.app/)
+- [UnoCSS](https://unocss.dev/)
 
 ## License
 
-This project is licensed under the Apache 2.0 License.
-
-[![Star History Chart](https://api.star-history.com/svg?repos=cworld1/astro-theme-pure&type=Date)](https://star-history.com/#cworld1/astro-theme-pure&Date)
+本仓库保留原模板的 Apache 2.0 License。个人内容、图片与简历信息请勿未经授权复用。
