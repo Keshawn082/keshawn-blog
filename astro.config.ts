@@ -25,9 +25,7 @@ export default defineConfig({
   site: 'https://keshawn.cn',
   trailingSlash: 'never',
   server: { host: true },
-  prefetch: {
-    defaultStrategy: 'viewport'
-  },
+  prefetch: false,
 
   output: 'static',
 
