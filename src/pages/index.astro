@@ -11,6 +11,8 @@ import PageLayout from '@/layouts/BaseLayout.astro'
 import ProjectCard from '@/components/home/ProjectCard.astro'
 import Section from '@/components/home/Section.astro'
 import SkillLayout from '@/components/home/SkillLayout.astro'
+import csuIcon from '@/assets/schools/csu.png'
+import xjuIcon from '@/assets/schools/xju.png'
 import config from '@/site-config'
 
 const languages = ['Python', 'TypeScript', 'JavaScript', 'SQL', 'HTML', 'CSS', 'Shell']
@@ -100,6 +102,7 @@ if (!images[imagePath])
             <div class='grid gap-2 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-x-6'>
               <div class='min-w-0 space-y-1'>
                 <div class='flex flex-wrap items-center gap-2'>
+                  <Image src={csuIcon} alt='中南大学' class='size-6 rounded-md object-contain' />
                   <h2 class='text-lg font-medium leading-tight' data-i18n='home.edu.csu.heading'>中南大学</h2>
                   <span class='rounded-md border bg-background px-1.5 py-0.5 text-xs text-muted-foreground' data-i18n='home.edu.tag.985'>985院校</span>
                   <span class='rounded-md border bg-background px-1.5 py-0.5 text-xs text-muted-foreground' data-i18n='home.edu.tag.double_first_class'>双一流院校</span>
@@ -118,6 +121,7 @@ if (!images[imagePath])
             <div class='grid gap-2 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-x-6'>
               <div class='min-w-0 space-y-1'>
                 <div class='flex flex-wrap items-center gap-2'>
+                  <Image src={xjuIcon} alt='新疆大学' class='size-6 rounded-md object-contain' />
                   <h2 class='text-lg font-medium leading-tight' data-i18n='home.edu.xju.heading'>新疆大学</h2>
                   <span class='rounded-md border bg-background px-1.5 py-0.5 text-xs text-muted-foreground' data-i18n='home.edu.tag.211'>211院校</span>
                   <span class='rounded-md border bg-background px-1.5 py-0.5 text-xs text-muted-foreground' data-i18n='home.edu.tag.double_first_class'>双一流院校</span>
