@@ -38,9 +38,15 @@ export const zh: Record<string, string> = {
   'home.skills.tools': '框架与工具',
 
   // Education section
-  'home.edu.heading': '中南大学',
-  'home.edu.subheading': '智能科学与技术 · 硕士',
-  'home.edu.date': '2024年9月 - 2027年6月',
+  'home.edu.csu.heading': '中南大学',
+  'home.edu.csu.subheading': '智能科学与技术 · 硕士',
+  'home.edu.csu.date': '2024年9月 - 2027年6月',
+  'home.edu.xju.heading': '新疆大学',
+  'home.edu.xju.subheading': '采矿工程 · 本科',
+  'home.edu.xju.date': '2020年9月 - 2024年6月',
+  'home.edu.tag.985': '985院校',
+  'home.edu.tag.211': '211院校',
+  'home.edu.tag.double_first_class': '双一流院校',
 
   // Project cards on homepage
   'home.project.more.heading': '更多项目',
@@ -158,9 +164,15 @@ export const en: Record<string, string> = {
   'home.skills.tools': 'Frameworks & Tools',
 
   // Education section
-  'home.edu.heading': 'Central South University',
-  'home.edu.subheading': 'Intelligent Science and Technology · Master',
-  'home.edu.date': 'Sep 2024 - Jun 2027',
+  'home.edu.csu.heading': 'Central South University',
+  'home.edu.csu.subheading': 'Intelligent Science and Technology · Master',
+  'home.edu.csu.date': 'Sep 2024 - Jun 2027',
+  'home.edu.xju.heading': 'Xinjiang University',
+  'home.edu.xju.subheading': 'Mining Engineering · Bachelor',
+  'home.edu.xju.date': 'Sep 2020 - Jun 2024',
+  'home.edu.tag.985': 'Project 985',
+  'home.edu.tag.211': 'Project 211',
+  'home.edu.tag.double_first_class': 'Double First-Class',
 
   // Project cards on homepage
   'home.project.more.heading': 'More Projects',

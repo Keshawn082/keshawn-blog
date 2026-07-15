@@ -91,19 +91,43 @@ if (!images[imagePath])
       }
 
       <Section title='教育' data-i18n-section='home.education'>
-        <a
-          href='https://www.csu.edu.cn'
-          class='not-prose block relative rounded-2xl border bg-muted px-5 py-3 transition-all hover:border-foreground/25 hover:shadow-sm'
-          target='_blank'
-        >
-          <div class='flex flex-col gap-y-1.5'>
-            <div class='flex flex-col gap-y-0.5'>
-              <h2 class='text-lg font-medium' data-i18n='home.edu.heading'>中南大学</h2>
-              <p class='text-muted-foreground' data-i18n='home.edu.subheading'>智能科学与技术 · 硕士</p>
-              <p class='text-muted-foreground' data-i18n='home.edu.date'>2024年9月-2027年6月</p>
+        <div class='not-prose flex flex-col gap-3'>
+          <a
+            href='https://www.csu.edu.cn'
+            class='group relative block rounded-2xl border bg-muted px-5 py-4 transition-all hover:border-foreground/25 hover:shadow-sm'
+            target='_blank'
+          >
+            <div class='grid gap-2 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-x-6'>
+              <div class='min-w-0 space-y-1'>
+                <div class='flex flex-wrap items-center gap-2'>
+                  <h2 class='text-lg font-medium leading-tight' data-i18n='home.edu.csu.heading'>中南大学</h2>
+                  <span class='rounded-md border bg-background px-1.5 py-0.5 text-xs text-muted-foreground' data-i18n='home.edu.tag.985'>985院校</span>
+                  <span class='rounded-md border bg-background px-1.5 py-0.5 text-xs text-muted-foreground' data-i18n='home.edu.tag.double_first_class'>双一流院校</span>
+                </div>
+                <p class='text-muted-foreground' data-i18n='home.edu.csu.subheading'>智能科学与技术 · 硕士</p>
+              </div>
+              <p class='whitespace-nowrap text-sm text-muted-foreground sm:pt-1 sm:text-right' data-i18n='home.edu.csu.date'>2024年9月 - 2027年6月</p>
             </div>
-          </div>
-        </a>
+          </a>
+
+          <a
+            href='https://www.xju.edu.cn'
+            class='group relative block rounded-2xl border bg-muted px-5 py-4 transition-all hover:border-foreground/25 hover:shadow-sm'
+            target='_blank'
+          >
+            <div class='grid gap-2 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-x-6'>
+              <div class='min-w-0 space-y-1'>
+                <div class='flex flex-wrap items-center gap-2'>
+                  <h2 class='text-lg font-medium leading-tight' data-i18n='home.edu.xju.heading'>新疆大学</h2>
+                  <span class='rounded-md border bg-background px-1.5 py-0.5 text-xs text-muted-foreground' data-i18n='home.edu.tag.211'>211院校</span>
+                  <span class='rounded-md border bg-background px-1.5 py-0.5 text-xs text-muted-foreground' data-i18n='home.edu.tag.double_first_class'>双一流院校</span>
+                </div>
+                <p class='text-muted-foreground' data-i18n='home.edu.xju.subheading'>采矿工程 · 本科</p>
+              </div>
+              <p class='whitespace-nowrap text-sm text-muted-foreground sm:pt-1 sm:text-right' data-i18n='home.edu.xju.date'>2020年9月 - 2024年6月</p>
+            </div>
+          </a>
+        </div>
       </Section>
 
       <Section title='项目' data-i18n-section='home.projects'>
