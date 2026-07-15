@@ -6,7 +6,11 @@ import Substats from '@/components/about/Substats.astro'
 import ToolSection from '@/components/about/ToolSection.astro'
 import hermesIcon from '@/assets/tools/hermes.png'
 import openaiIcon from '@/assets/tools/openai.png'
-import langchainIcon from '@/assets/tools/langchain.png'
+import chatgptIcon from '@/assets/tools/chatgpt.png'
+import claudeCodeIcon from '@/assets/tools/claude-code.png'
+import cozeIcon from '@/assets/tools/coze.png'
+import comfyuiIcon from '@/assets/tools/comfyui.png'
+import langgraphIcon from '@/assets/tools/langgraph.png'
 import llamaindexIcon from '@/assets/tools/llamaindex.png'
 import pythonIcon from '@/assets/tools/python.png'
 import typescriptIcon from '@/assets/tools/typescript.png'
@@ -54,28 +58,52 @@ const headings = [
     data-i18n-title='about.tools.ai'
     tools={[
       {
-        name: 'Hermes Agent',
-        description: 'Agent 框架',
-        href: 'https://github.com/NousResearch/Hermes',
-        icon: hermesIcon
-      },
-      {
         name: 'OpenAI API',
         description: 'LLM 服务',
         href: 'https://platform.openai.com/',
         icon: openaiIcon
       },
       {
-        name: 'LangChain',
-        description: 'Agent 编排',
-        href: 'https://www.langchain.com/',
-        icon: langchainIcon
+        name: 'ChatGPT',
+        description: 'AI 助手',
+        href: 'https://chatgpt.com/',
+        icon: chatgptIcon
+      },
+      {
+        name: 'Claude Code',
+        description: 'AI 编码助手',
+        href: 'https://www.anthropic.com/claude-code',
+        icon: claudeCodeIcon
+      },
+      {
+        name: 'Hermes Agent',
+        description: 'Agent 框架',
+        href: 'https://github.com/NousResearch/Hermes',
+        icon: hermesIcon
+      },
+      {
+        name: 'LangGraph',
+        description: 'Agent 编排框架',
+        href: 'https://www.langchain.com/langgraph',
+        icon: langgraphIcon
       },
       {
         name: 'LlamaIndex',
         description: 'RAG 框架',
         href: 'https://www.llamaindex.ai/',
         icon: llamaindexIcon
+      },
+      {
+        name: 'Coze',
+        description: 'Agent 搭建平台',
+        href: 'https://www.coze.com/',
+        icon: cozeIcon
+      },
+      {
+        name: 'ComfyUI',
+        description: 'AI 图像工作流',
+        href: 'https://www.comfy.org/',
+        icon: comfyuiIcon
       }
     ]}
   />
