@@ -1,38 +1,18 @@
 ---
 import { Image } from 'astro:assets'
 
-import { Collapse, Icon } from 'astro-pure/user'
-import Button from '@/components/Button.astro'
+import { Collapse } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
-import Sponsors from '@/components/projects/Sponsors.astro'
-import Sponsorship from '@/components/projects/Sponsorship.astro'
-import alipay from '@/assets/alipay-qrcode.jpg'
-import KeyIcon from '@/assets/icons/key.svg'
-import wechat from '@/assets/wechat-qrcode.jpg'
 
 const headings = [
   { depth: 2, slug: 'programs', text: 'Programs' },
   { depth: 2, slug: 'learnings', text: 'Learnings' },
-  { depth: 2, slug: 'others', text: 'Others' },
-  { depth: 2, slug: 'gpg-signature', text: 'GPG Signature' },
-  { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
+  { depth: 2, slug: 'others', text: 'Others' }
 ]
 ---
 
 <PageLayout title='项目' data-i18n-title='projects.title' {headings} view>
-  {/* About astro-pure */}
-  <div class='not-prose flex justify-center'>
-    <a
-      href='/docs/advanced/about' target='_blank'
-      class='flex items-center gap-x-3 rounded-full border bg-background px-4 py-2 text-sm shadow-sm transition-shadow hover:shadow-md'
-    >
-      <span class='size-2 rounded-full bg-green-400'></span>
-      <p class='font-medium text-muted-foreground' data-i18n='projects.about_theme'>
-        About Astro-Theme-Pure 项目
-      </p>
-    </a>
-  </div>
   <p data-i18n='projects.github_activities'>GitHub 动态：</p>
   <p>
     <Image
@@ -42,14 +22,6 @@ const headings = [
       loading='lazy'
     />
   </p>
-  <p data-i18n='projects.collaborate'>
-    如果你觉得可以合作或者有兴趣参与项目，可以通过捐赠支持我的工作或联系我讨论项目。
-  </p>
-  <Button class='w-fit' href='#sponsorship'>
-    <Icon class='size-5' name='receive-money' slot='before' />
-    <span data-i18n='projects.checkout_sponsorship'>查看赞助</span>
-  </Button>
-
   <h2 id='programs' data-i18n='projects.programs'>项目</h2>
   <ProjectSection
     projects={[
@@ -140,80 +112,4 @@ const headings = [
     ]}
   />
 
-  <h2 id='gpg-signature' data-i18n='projects.gpg'>GPG 签名</h2>
-  <p>
-    <span data-i18n='projects.gpg_desc'>你可以通过验证 GPG 签名来确认我签署的文件的真实性。我的 GPG 密钥是</span>
-    <code>114514</code>
-  </p>
-  <Button href='https://keys.openpgp.org/search?q=114514' target='_blank'>
-    <KeyIcon class='size-5' slot='before' />
-    <span data-i18n='projects.checkout_key'>查看我的密钥</span>
-  </Button>
-
-  <h2 id='sponsorship' data-i18n='projects.sponsorship'>赞助</h2>
-  <p>
-    <span data-i18n='projects.sponsorship.cn'>国内方式：</span>
-    <a href="https://afdian.com/a/cworld" target="_blank">Afadian</a>, Wechat or Alipay
-  </p>
-  <Sponsorship
-    methods={[
-      { name: 'WeChat', icon: 'wechat-pay', image: wechat },
-      { name: 'Alipay', icon: 'alipay', image: alipay }
-    ]}
-  />
-  <p>
-    <span data-i18n='projects.sponsorship.global'>国际方式：</span>
-    <a href="https://ko-fi.com/cworld0" target="_blank">Ko-fi</a>
-  </p>
-  <p>
-    <span data-i18n='projects.sponsorship.contact'>赞助后请留言或主动联系我。我的邮箱是</span>
-    <code style='cursor: pointer'
-      onclick='const m=atob(this.textContent);alert(m);window.open(`mailto:${m}`,"_blank")'
-    >Y3dvcmxkMEBxcS5jb20=</code>
-    <span data-i18n='projects.email_hint'>（点击代码解码 Base64）</span>
-  </p>
-  <p data-i18n='projects.sponsorship.thanks'>感谢以下赞助者：</p>
-  <Sponsors
-    progressMax={50}
-    sponsors={[
-      { name: 'd2be8', platform: 'Afdian', amount: 5, date: '2026-05-22' },
-      { name: 'Saneko', platform: 'Wechat', amount: 188, date: '2026-02-25' },
-      { name: '边缘星2020', platform: 'Afdian', amount: 20.26, date: '2026-02-17' },
-      { name: 'Juyao Huang', platform: 'Wechat', amount: 5, date: '2026-01-15' },
-      { name: 'hoochanlon', platform: 'Wechat', amount: 5, date: '2025-11-09' },
-      { name: 'Arthals', platform: 'Wechat', amount: 50, date: '2025-11-06' },
-      { name: '边缘星2020 (byx2020.com)', platform: 'Alipay', amount: 50, date: '2025-11-01' },
-      { name: '小哲', platform: 'Wechat', amount: 50, date: '2025-08-19' },
-      { name: 'Open1V', platform: 'Wechat', amount: 2, date: '2025-08-14' },
-      { name: 'Luis Xu', platform: 'Alipay', amount: 30, date: '2025-08-03' },
-      { name: '顾**', platform: 'Wechat', amount: 28, date: '2025-06-23' },
-      { name: 'Hans J.Han', platform: 'Wechat', amount: 10, date: '2025-04-04' },
-      { name: '**青', platform: 'Alipay', amount: 12, date: '2025-05-21' },
-      { name: 'Anonymous', platform: 'Wechat', amount: 20, date: '2022-04-06' },
-      { name: '华雄', platform: 'QQ', amount: 5, date: '2019-12-30' },
-      { name: '◌', platform: 'QQ', amount: 3, date: '2019-12-30' },
-      // 酷安@暴走の蜗牛
-      { name: 'C*a', amount: 2, date: '2019-07-02' }
-    ]}
-  />
 </PageLayout>
-
-<style>
-  .sponsorship-card {
-    & .sponsorship-card-img {
-      opacity: 0.3;
-      --un-blur: blur(4px);
-      filter: var(--un-blur);
-    }
-
-    &:hover {
-      & .sponsorship-card-icon {
-        opacity: 0;
-      }
-      & .sponsorship-card-img {
-        opacity: 1;
-        --un-blur: blur(0);
-      }
-    }
-  }
-</style>
