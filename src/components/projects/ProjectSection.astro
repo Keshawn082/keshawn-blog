@@ -30,6 +30,15 @@ const projectIconSet: Record<string, IconsType> = {
   doc: 'document',
   release: 'package'
 }
+
+// Split description on blank lines into paragraphs so we can control
+// inter-paragraph spacing with CSS instead of relying on raw newlines
+// (which also produced the leading-space / mis-alignment look).
+const splitParagraphs = (text: string): string[] =>
+  text
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(Boolean)
 ---
 
 <div class={className} {...props}>
@@ -44,6 +53,8 @@ const projectIconSet: Record<string, IconsType> = {
               `"${imagePath}" does not exist in glob: "src/assets/projects/*.{jpeg,jpg,png,gif,avif,webp}"`
             )
         }
+
+        const paragraphs = splitParagraphs(project.description)
 
         return (
           <div class='relative overflow-hidden rounded-xl border'>
@@ -82,7 +93,9 @@ const projectIconSet: Record<string, IconsType> = {
                 </span>
               )}
               <div class='project-description leading-snug text-muted-foreground'>
-                {project.description}
+                {paragraphs.map((p) => (
+                  <p>{p}</p>
+                ))}
               </div>
               {project.links.length > 0 && (
                 <div class='flex flex-row items-center gap-x-2 sm:gap-x-3'>
@@ -119,17 +132,16 @@ const projectIconSet: Record<string, IconsType> = {
     padding-right: 0.25rem;
     font-size: 0.8rem;
     line-height: 1.45;
-    text-align: justify;
-    white-space: pre-wrap;
-    word-break: break-word;
-    /* Subtle fade hint at top/bottom when content overflows */
-    mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - 0.5rem), transparent 100%);
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      #000 0,
-      #000 calc(100% - 0.5rem),
-      transparent 100%
-    );
+    text-align: start;
+        word-break: break-word;
+  }
+  /* Reset <p> defaults so first paragraph aligns flush with title */
+  .project-description p {
+    margin: 0;
+  }
+  /* Half-line gap between paragraphs (≈ 0.5 of line-height) */
+  .project-description p + p {
+    margin-top: 0.5em;
   }
   /* Slim scrollbar styling */
   .project-description::-webkit-scrollbar {
