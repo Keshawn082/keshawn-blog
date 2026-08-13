@@ -1,115 +1,110 @@
 ---
-import { Image } from 'astro:assets'
-
 import { Collapse } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
 
 const headings = [
-  { depth: 2, slug: 'programs', text: 'Programs' },
-  { depth: 2, slug: 'learnings', text: 'Learnings' },
-  { depth: 2, slug: 'others', text: 'Others' }
+  { depth: 2, slug: 'featured', text: 'Featured' },
+  { depth: 2, slug: 'ai-agent', text: 'AI & Agent' },
+  { depth: 2, slug: 'learning', text: 'Learning' }
 ]
 ---
 
 <PageLayout title='项目' data-i18n-title='projects.title' {headings} view>
-  <p data-i18n='projects.github_activities'>GitHub 动态：</p>
-  <p>
-    <Image
-      src='https://ghchart.rshah.org/659eb9/cworld1'
-      alt='github activities'
-      inferSize
-      loading='lazy'
-    />
+  <p data-i18n='projects.intro'>
+    这里汇总了我做过或正在做的项目。个人项目仓库的代码与文档还在整理中，部分项目会以博客文章或本地代码的形式先记录，待整理完成后会陆续开源。
   </p>
-  <h2 id='programs' data-i18n='projects.programs'>项目</h2>
+
+  <h2 id='featured' data-i18n='projects.featured'>精选项目</h2>
   <ProjectSection
     projects={[
       {
-        name: '🎨 Astro Theme Pure',
-        description: 'A simple, fast and powerful blog & document theme built by Astro',
+        name: 'Keshawn Blog',
+        description:
+          '我的个人技术博客与主页，基于 Astro 与 Astro Theme Pure 搭建，专注于大模型应用开发与 AI Agent 实践记录',
         links: [
-          { type: 'github', href: 'https://github.com/cworld1/astro-theme-pure' },
-          { type: 'site', href: 'https://astro-pure.js.org/' },
-          { type: 'doc', href: 'https://astro-pure.js.org/docs/list' },
-          { type: 'release', href: 'https://www.npmjs.com/package/astro-pure' }
+          { type: 'github', href: 'https://github.com/Keshawn082/keshawn-blog' },
+          { type: 'site', href: 'https://keshawn.cn' }
         ]
       },
       {
-        name: '💄 PKU Art',
-        description: 'A script to beautify pku course website',
+        name: 'ChaoJi Skill Pack（整理中）',
+        description:
+          '潮际汇（杭州）智能科技有限公司实习期间输出的 OpenAPI 技能包，涵盖虚拟试衣、抠图、文生图等场景',
         links: [
-          { type: 'github', href: 'https://github.com/zhuozhiyongde/pku-art' },
-          { type: 'site', href: 'https://github.com/zhuozhiyongde/pku-art' },
-          { type: 'doc', href: 'https://docs.arthals.ink/docs/pku-art' }
+          { type: 'github', href: 'https://github.com/Keshawn082/keshawn-blog' }
         ]
       }
     ]}
   />
-  <Collapse title='一些老项目'>
-    <span slot='title' data-i18n='projects.old_projects' hidden>一些老项目</span>
-    <ProjectSection
-      projects={[
-        {
-          name: '🧩 rehype-autolink-headings-simple',
-          description: 'A simple version of rehype-autolink-headings',
-          links: [
-            { type: 'github', href: 'https://github.com/cworld1/rehype-autolink-headings-simple' },
-            {
-              type: 'release',
-              href: 'https://www.npmjs.com/package/rehype-autolink-headings-simple'
-            }
-          ]
-        },
-        {
-          name: 'Gaussian NB',
-          description:
-            'Simulating the Parsimonious Bayesian Algorithm with Python and Finding the Probability Prediction of Breast Cancer ',
-          links: [{ type: 'github', href: 'https://github.com/cworld1/gaussian-nb' }]
-        }
-      ]}
-    />
+
+  <h2 id='ai-agent' data-i18n='projects.ai_agent'>AI 与 Agent 实践</h2>
+  <ProjectSection
+    projects={[
+      {
+        name: 'Hermes Agent 深度解析与实践（整理中）',
+        description:
+          '对 Hermes Agent 的源码、CLI、Skills、Profile、Workflow 等机制的系统梳理与二次开发实践',
+        links: [
+          { type: 'doc', href: '/blog/hermes-agent-deep-dive' }
+        ]
+      },
+      {
+        name: 'RAG 实践项目（整理中）',
+        description:
+          '结合 BGE 向量模型、SQLite + FTS5、jieba 分词等组件的轻量级中文 RAG 实践，相关代码与笔记持续整理中',
+        links: [
+          { type: 'doc', href: '/blog' }
+        ]
+      },
+      {
+        name: 'Multi-Agent 协作实验（整理中）',
+        description:
+          '基于 OpenAI Agents SDK / LangGraph 的多 Agent 协作工作流实验，含代码与设计文档，待整理后开源',
+        links: [
+          { type: 'doc', href: '/blog' }
+        ]
+      }
+    ]}
+  />
+
+  <h2 id='learning' data-i18n='projects.learning'>学习实践</h2>
+  <ProjectSection
+    projects={[
+      {
+        name: '大模型应用开发学习笔记（整理中）',
+        description:
+          '围绕 Prompt Engineering、Function Calling、Harness Engineering、Agent 工作流等主题的学习笔记与代码片段',
+        links: [
+          { type: 'doc', href: '/blog' }
+        ]
+      },
+      {
+        name: 'Agent 工程化实践记录（整理中）',
+        description:
+          '在实习与个人项目中沉淀的 Agent 工程化经验：可观测性、工具调用、上下文管理、Skills 设计等',
+        links: [
+          { type: 'doc', href: '/blog' }
+        ]
+      }
+    ]}
+  />
+
+  <Collapse title='项目待添加 / 完善说明'>
+    <p>
+      目前博客中的项目卡片以“精选项目 + AI 与 Agent 实践 + 学习实践”三个分组占位为主，
+      部分项目（特别是潮际汇 OpenAPI 技能包、RAG 实践项目、Multi-Agent 协作实验）的独立仓库与文档尚未公开，
+      需要后续整理完成后单独建仓并补充：
+    </p>
+    <ul>
+      <li>独立的 GitHub 仓库地址（README、技术栈、运行说明、截图）</li>
+      <li>可对外展示的演示站点或录屏</li>
+      <li>核心实现思路、关键代码片段、效果对比</li>
+      <li>对应的博客文章链接</li>
+    </ul>
+    <p>
+      在整理完成前，本项目页只展示已开源或可公开的项目，不展示实习公司内部项目代码。
+    </p>
   </Collapse>
-
-  <h2 id='learnings' data-i18n='projects.learnings'>学习</h2>
-  <ProjectSection
-    class='my-2'
-    projects={[
-      {
-        name: 'R Learning',
-        description: 'Some notes and code about learning R language',
-        links: [
-          { type: 'github', href: 'https://github.com/cworld1/r-learning' },
-          { type: 'site', href: 'https://cworld1.github.io/r-learning' }
-        ]
-      },
-      {
-        name: 'CS 213 Learning',
-        description: 'Notes, code and experiences for Introduction to Computer Systems course',
-        links: [
-          {
-            type: 'github',
-            href: 'https://github.com/zhuozhiyongde/Introduction-To-Computer-System-2023Fall-PKU'
-          }
-        ]
-      }
-    ]}
-  />
-
-  <h2 id='others' data-i18n='projects.others'>其他</h2>
-  <ProjectSection
-    projects={[
-      {
-        name: 'CWorld',
-        description: "CWorld's Github",
-        links: [{ type: 'github', href: 'https://github.com/cworld1' }]
-      },
-      {
-        name: 'Arthals',
-        description: 'Arthals Github',
-        links: [{ type: 'github', href: 'https://github.com/zhuozhiyongde' }]
-      }
-    ]}
-  />
 
 </PageLayout>

@@ -126,26 +126,13 @@ export const zh: Record<string, string> = {
   'about.tools.development': '开发工具',
   'about.tools.devops': '部署与运维',
 
-
   // Projects page
   'projects.title': '项目',
-  'projects.about_theme': '关于 Astro-Theme-Pure 项目',
-  'projects.github_activities': 'GitHub 动态：',
-  'projects.collaborate': '如果你觉得可以合作或者有兴趣参与项目，可以通过捐赠支持我的工作或联系我讨论项目。',
-  'projects.checkout_sponsorship': '查看赞助',
-  'projects.programs': '项目',
-  'projects.learnings': '学习',
-  'projects.others': '其他',
-  'projects.gpg': 'GPG 签名',
-  'projects.gpg_desc': '你可以通过验证 GPG 签名来确认我签署的文件的真实性。我的 GPG 密钥是',
-  'projects.checkout_key': '查看我的密钥',
-  'projects.sponsorship': '赞助',
-  'projects.sponsorship.cn': '国内方式：',
-  'projects.sponsorship.global': '国际方式：',
-  'projects.sponsorship.contact': '赞助后请留言或主动联系我。我的邮箱是',
-  'projects.sponsorship.thanks': '感谢以下赞助者：',
-  'projects.old_projects': '一些老项目',
-  'projects.email_hint': '（点击代码解码 Base64）',
+  'projects.intro':
+    '这里汇总了我做过或正在做的项目。个人项目仓库的代码与文档还在整理中，部分项目会以博客文章或本地代码的形式先记录，待整理完成后会陆续开源。',
+  'projects.featured': '精选项目',
+  'projects.ai_agent': 'AI 与 Agent 实践',
+  'projects.learning': '学习实践'
 }
 
 export const en: Record<string, string> = {
@@ -270,26 +257,13 @@ export const en: Record<string, string> = {
   'about.tools.development': 'Development Tools',
   'about.tools.devops': 'Deployment & DevOps',
 
-
   // Projects page
   'projects.title': 'Projects',
-  'projects.about_theme': 'About Astro-Theme-Pure Project',
-  'projects.github_activities': 'Github Activities:',
-  'projects.collaborate': 'If you think it would be useful or interesting to collaborate on a project, you can donate to support my work or contact me to discuss a project.',
-  'projects.checkout_sponsorship': 'Checkout Sponsorship',
-  'projects.programs': 'Programs',
-  'projects.learnings': 'Learnings',
-  'projects.others': 'Others',
-  'projects.gpg': 'GPG Signature',
-  'projects.gpg_desc': 'You can verify the authenticity of the files I signed by checking the GPG signature. My GPG key is',
-  'projects.checkout_key': 'Checkout My Key',
-  'projects.sponsorship': 'Sponsorship',
-  'projects.sponsorship.cn': 'Chinese methods: ',
-  'projects.sponsorship.global': 'Global methods: ',
-  'projects.sponsorship.contact': 'Please leave a message or contact me proactively after sponsorship. My email is:',
-  'projects.sponsorship.thanks': 'Thanks to the following sponsors:',
-  'projects.old_projects': 'Some Old Projects',
-  'projects.email_hint': '(click code to transform base64)',
+  'projects.intro':
+    'A summary of projects I have built or am currently working on. Personal project repositories and documentation are still being organized; some projects will be recorded first as blog posts or local code and will be open-sourced as they become ready.',
+  'projects.featured': 'Featured',
+  'projects.ai_agent': 'AI & Agent',
+  'projects.learning': 'Learning'
 }
 
 export function getTranslations(lang: 'zh-CN' | 'en'): Record<string, string> {
