@@ -69,38 +69,38 @@ const projectIconSet: Record<string, IconsType> = {
               )}
             >
               {project.links.length > 0 ? (
-                              <a
-                                class='line-clamp-1 font-medium text-foreground no-underline transition-colors'
-                                href={project.links[0].href}
-                                target='_blank'
-                              >
-                                {project.name}
-                              </a>
-                            ) : (
-                              <span class='line-clamp-1 font-medium text-foreground'>
-                                {project.name}
-                              </span>
-                            )}
-                            <div class='line-clamp-2 leading-snug text-muted-foreground sm:h-12'>
-                              {project.description}
-                            </div>
-                            {project.links.length > 0 && (
-                              <div class='flex flex-row items-center gap-x-2 sm:gap-x-3'>
-                                {project.links.map((link) => {
-                                  const icon = projectIconSet[link.type]
-                                  return (
-                                    <a
-                                      href={link.href}
-                                      class='rounded-full bg-muted p-1 text-muted-foreground transition-colors sm:p-1.5'
-                                      aria-label={link.type}
-                                      target='_blank'
-                                    >
-                                      <Icon class='size-5' name={icon} />
-                                    </a>
-                                  )
-                                })}
-                              </div>
-                            )}
+                <a
+                  class='line-clamp-1 font-medium text-foreground no-underline transition-colors'
+                  href={project.links[0].href}
+                  target='_blank'
+                >
+                  {project.name}
+                </a>
+              ) : (
+                <span class='line-clamp-1 font-medium text-foreground'>
+                  {project.name}
+                </span>
+              )}
+              <div class='project-description leading-snug text-muted-foreground'>
+                {project.description}
+              </div>
+              {project.links.length > 0 && (
+                <div class='flex flex-row items-center gap-x-2 sm:gap-x-3'>
+                  {project.links.map((link) => {
+                    const icon = projectIconSet[link.type]
+                    return (
+                      <a
+                        href={link.href}
+                        class='rounded-full bg-muted p-1 text-muted-foreground transition-colors sm:p-1.5'
+                        aria-label={link.type}
+                        target='_blank'
+                      >
+                        <Icon class='size-5' name={icon} />
+                      </a>
+                    )
+                  })}
+                </div>
+              )}
             </div>
           </div>
         )
@@ -108,3 +108,45 @@ const projectIconSet: Record<string, IconsType> = {
     }
   </div>
 </div>
+
+<style>
+  /* Project card description: fixed-height block with vertical scroll
+     so long descriptions can be read in full without expanding the card. */
+  .project-description {
+    max-height: 12rem; /* ~ 192px, fits ~10 lines of compact text */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 0.25rem;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    text-align: justify;
+    white-space: pre-wrap;
+    word-break: break-word;
+    /* Subtle fade hint at top/bottom when content overflows */
+    mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - 0.5rem), transparent 100%);
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0,
+      #000 calc(100% - 0.5rem),
+      transparent 100%
+    );
+  }
+  /* Slim scrollbar styling */
+  .project-description::-webkit-scrollbar {
+    width: 6px;
+  }
+  .project-description::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .project-description::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, currentColor 25%, transparent);
+    border-radius: 9999px;
+  }
+  .project-description::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, currentColor 45%, transparent);
+  }
+  .project-description {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, currentColor 25%, transparent) transparent;
+  }
+</style>
