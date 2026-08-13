@@ -50,20 +50,16 @@ const headings = [
         ]
       },
       {
-        name: 'RAG 实践项目（整理中）',
+        name: 'A股智能投资系统',
         description:
-          '结合 BGE 向量模型、SQLite + FTS5、jieba 分词等组件的轻量级中文 RAG 实践，相关代码与笔记持续整理中',
-        links: [
-          { type: 'doc', href: '/blog' }
-        ]
+          '面向普通投资者的端到端智能投顾 Agent 系统。基于 LangGraph + React 构建多 Agent 协作流（基本面 / 技术面 / 估值 / 新闻解读），基于 MCP 协议封装金融数据 API，工具调用成功率 98%，可稳定输出 4k 字综合报告。模型侧基于 Qwen3-8B LoRA 微调新闻情感与风险模型（10 万级语料 + SimHash 去重，测试集准确率 91%），并设计格式 + 语义双重奖励机制的 GRPO 强化训练流程；端到端时延通过并行与缓存从 2 分钟+ 降至约 90 秒。',
+        links: []
       },
       {
-        name: 'Multi-Agent 协作实验（整理中）',
+        name: '基于 Skills-Agent 双层架构的医疗助手',
         description:
-          '基于 OpenAI Agents SDK / LangGraph 的多 Agent 协作工作流实验，含代码与设计文档，待整理后开源',
-        links: [
-          { type: 'doc', href: '/blog' }
-        ]
+          '面向医疗咨询的智能问答系统（2026.04 - 2026.06，项目负责人）。设计 Agent Loop + Agent Swarm 双层协作机制与 7 个原子化 Skills，统一由 SkillRegistry 编排与动态加载；融合短期会话记忆与 Mem0 长期记忆，基于 Milvus 构建医学知识库；引入约束验证 + 自动修复的 Harness Engineering 链路降低幻觉风险。智能路由准确率从 88% 提升至 95%，知识库检索准确率 87%，系统回答质量 4.5 vs doubao-seed-2.0-pro 3.9。',
+        links: []
       }
     ]}
   />
@@ -92,9 +88,9 @@ const headings = [
 
   <Collapse title='项目待添加 / 完善说明'>
     <p>
-      目前博客中的项目卡片以“精选项目 + AI 与 Agent 实践 + 学习实践”三个分组占位为主，
-      部分项目（特别是潮际汇 OpenAPI 技能包、RAG 实践项目、Multi-Agent 协作实验）的独立仓库与文档尚未公开，
-      需要后续整理完成后单独建仓并补充：
+      目前博客中的项目卡片以「精选项目 + AI 与 Agent 实践 + 学习实践」三个分组占位为主。
+      其中「精选项目」下的 ChaoJi Skill Pack、「AI 与 Agent 实践」下新加入的 A 股智能投资系统与医疗助手
+      的独立仓库与文档尚未公开，需要后续整理完成后单独建仓并补充：
     </p>
     <ul>
       <li>独立的 GitHub 仓库地址（README、技术栈、运行说明、截图）</li>
